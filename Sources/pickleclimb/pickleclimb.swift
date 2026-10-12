@@ -1,9 +1,8 @@
-// The Swift Programming Language
-// https://docs.swift.org/swift-book
+import PickleClimbCore
 
 @main
 struct pickleclimb {
     static func main() {
-        print("Hello, world!")
+        print("PickleClimb starts at the \(GeographicLevel.court.displayName) level.")
     }
 }
