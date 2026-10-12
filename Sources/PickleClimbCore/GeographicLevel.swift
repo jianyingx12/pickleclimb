@@ -1,4 +1,4 @@
-public enum GeographicLevel: Int, CaseIterable, Codable, Sendable {
+public enum GeographicLevel: String, CaseIterable, Codable, Sendable {
     case court
     case neighborhood
     case city
@@ -18,6 +18,15 @@ public enum GeographicLevel: Int, CaseIterable, Codable, Sendable {
     }
 
     public var next: GeographicLevel? {
-        GeographicLevel(rawValue: rawValue + 1)
+        switch self {
+        case .court:
+            .neighborhood
+        case .neighborhood:
+            .city
+        case .city:
+            .state
+        case .state:
+            nil
+        }
     }
 }
